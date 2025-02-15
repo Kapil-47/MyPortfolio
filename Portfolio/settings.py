@@ -123,10 +123,11 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 # Point to your static folder where static files are located
+
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")  # Required for collectstatic
 STATICFILES_DIRS = [
-    BASE_DIR / "static",
+    os.path.join(BASE_DIR, "static"),  # Make sure this folder exists
 ]
-STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")  # Add this line
 STORAGES = {
     "staticfiles": {
         "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
