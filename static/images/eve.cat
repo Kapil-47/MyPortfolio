@@ -1,0 +1,274 @@
+ <style>
+        body {
+            font-family: 'SF Pro Display', sans-serif;
+            background-color: #000;
+            color: white;
+        }
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: url('/bg_1.jpg') no-repeat center center/cover;
+            color: white;
+        }
+
+        .section {
+            padding: 100px 0;
+            text-align: center;
+
+        }
+
+        .navbar {
+            transition: background 0.3s;
+        }
+
+        .navbar.scrolled {
+            background: rgba(0, 0, 0, 0.9) !important;
+        }
+
+        .profile-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+
+        h1,
+        h2 {
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        p {
+            font-size: 1.2rem;
+            opacity: 0.8;
+        }
+
+        .btn-primary {
+            background-color: #0071E3;
+            border: none;
+            padding: 12px 24px;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            transition: 0.3s;
+        }
+
+        .btn-primary:hover {
+            background-color: #005BB5;
+        }
+
+        /* Project Image Styling */
+        .project-img {
+            width: 100%;
+            /* Ensure the image takes up the full width of the card */
+            height: 400px;
+            ;
+            /* Set a fixed height for all images */
+            object-fit: cover;
+            /* Maintain aspect ratio and cover the entire space */
+            border-radius: 10px 10px 10px 10px;
+            /* Rounded corners at the top */
+        }
+
+        @media (max-width: 767.98px) {
+            #projects .col-md-4 .card {
+                margin-top: 20px;
+                /* Adds space above the second card */
+            }
+        }
+
+        .card {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: none;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 767.98px) {
+            #certi .col-md-6:last-child {
+                margin-top: 20px;
+                /* Adds space above the second card */
+            }
+        }
+
+        footer {
+            background: #111;
+            padding: 20px 0;
+            text-align: center;
+            color: white;
+        }
+
+        .social-icons a {
+            color: white;
+            font-size: 24px;
+            margin: 0 10px;
+            transition: 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #0071E3;
+        }
+
+        /* Contact Form Styling */
+        .contact-form {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(15px);
+            /* Adds a blur effect */
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .contact-form:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 113, 227, 0.3);
+        }
+
+        /* Form Input Styling */
+        .contact-form input,
+        .contact-form textarea {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 12px;
+            border-radius: 10px;
+            transition: border-color 0.3s ease-in-out;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-color: #0071E3;
+            outline: none;
+            box-shadow: 0 0 8px rgba(0, 113, 227, 0.5);
+        }
+
+        /* Placeholder Styling */
+        .contact-form input::placeholder,
+        .contact-form textarea::placeholder {
+            color: rgba(26, 17, 17, 0.7);
+        }
+
+        /* Label Styling */
+        .contact-form .form-label {
+            display: block;
+            text-align: left;
+            margin-left: 8px;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        /* Submit Button Styling */
+        .contact-form .btn-primary {
+            background-color: #0071E3;
+            border: none;
+            padding: 12px 30px;
+            font-size: 1rem;
+            border-radius: 50px;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .contact-form .btn-primary:hover {
+            background-color: #005BB5;
+        }
+
+        .profile-img {
+            width: 250px;
+            /* Adjust width for portrait */
+            height: auto;
+            /* Maintain aspect ratio */
+            border-radius: 15px;
+            /* Slightly rounded corners */
+            border: 5px solid #0071E3;
+            /* Add a border */
+            box-shadow: 0 4px 15px rgba(0, 113, 227, 0.3);
+            /* Add a subtle shadow */
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .profile-img:hover {
+            transform: scale(1.05);
+            /* Slightly enlarge on hover */
+            box-shadow: 0 6px 20px rgba(0, 113, 227, 0.5);
+            /* Enhance shadow on hover */
+        }
+
+        /* Ensure consistent spacing and alignment */
+        #about p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
+        }
+
+        #about .btn-primary {
+            font-size: 1rem;
+            padding: 10px 20px;
+        }
+
+
+
+        /* skilll */
+        /* Skill Card Styling */
+        .skill-card {
+            background-color: #111;
+            border-radius: 15px;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .skill-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 25px rgba(0, 113, 227, 0.3);
+        }
+
+        /* Skill Icon Styling */
+        .skill-icon {
+            width: 60px;
+            height: 60px;
+            filter: brightness(0) invert(1);
+            /* Make icons white */
+        }
+
+        /* Skill Title Styling */
+        .skill-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #0071E3;
+        }
+
+        /* Skill Description Styling */
+        .skill-description {
+            font-size: 0.95rem;
+            opacity: 0.8;
+            margin-bottom: 0;
+        }
+
+        /* skillls */
+
+
+        /* Custom CSS for additional animations */
+        @keyframes customFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .custom-fade-in {
+            animation: customFadeIn 1s ease-out;
+        }
+    </style>
